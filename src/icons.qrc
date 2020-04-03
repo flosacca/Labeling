@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../res/next.svg</file>
+        <file>../res/open.svg</file>
+        <file>../res/prev.svg</file>
+        <file>../res/save.svg</file>
+        <file>../res/tag.svg</file>
+        <file>../res/arrow.cur</file>
+    </qresource>
+</RCC>

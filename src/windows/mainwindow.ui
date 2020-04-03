@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Labeling</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/res/tag.svg</normaloff>:/res/tag.svg</iconset>
+  </property>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actOpen"/>
+    <addaction name="actOpenFolder"/>
+    <addaction name="actLoad"/>
+    <addaction name="separator"/>
+    <addaction name="actSave"/>
+    <addaction name="actSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actPrev"/>
+    <addaction name="actNext"/>
+    <addaction name="separator"/>
+    <addaction name="actClose"/>
+    <addaction name="actCloseAll"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actNew"/>
+    <addaction name="actRemove"/>
+    <addaction name="actRemoveAll"/>
+    <addaction name="separator"/>
+    <addaction name="actUndo"/>
+    <addaction name="actRedo"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>&amp;Window</string>
+    </property>
+    <addaction name="actSwitch"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuWindow"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actOpen"/>
+   <addaction name="separator"/>
+   <addaction name="actSave"/>
+   <addaction name="separator"/>
+   <addaction name="actPrev"/>
+   <addaction name="actNext"/>
+   <addaction name="separator"/>
+   <addaction name="actNew"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actOpen">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/res/open.svg</normaloff>:/res/open.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open File...</string>
+   </property>
+   <property name="shortcut">
+    <string>O</string>
+   </property>
+  </action>
+  <action name="actOpenFolder">
+   <property name="text">
+    <string>Open &amp;Folder...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actLoad">
+   <property name="text">
+    <string>&amp;Load Label...</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/res/save.svg</normaloff>:/res/save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save Label</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actSaveAs">
+   <property name="text">
+    <string>Save Label &amp;As...</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+  <action name="actPrev">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/res/prev.svg</normaloff>:/res/prev.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Prev Image</string>
+   </property>
+   <property name="shortcut">
+    <string>PgUp</string>
+   </property>
+  </action>
+  <action name="actNext">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/res/next.svg</normaloff>:/res/next.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Next Image</string>
+   </property>
+   <property name="shortcut">
+    <string>PgDown</string>
+   </property>
+  </action>
+  <action name="actClose">
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actCloseAll">
+   <property name="text">
+    <string>Close All</string>
+   </property>
+  </action>
+  <action name="actNew">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/res/tag.svg</normaloff>:/res/tag.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New Label...</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="actRemove">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Remove Selected</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actRemoveAll">
+   <property name="text">
+    <string>Remove by &amp;Tag...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actUndo">
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actRedo">
+   <property name="text">
+    <string>&amp;Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actSwitch">
+   <property name="text">
+    <string>3D Image</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
